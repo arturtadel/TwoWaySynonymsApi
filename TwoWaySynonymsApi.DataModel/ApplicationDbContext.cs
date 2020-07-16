@@ -12,7 +12,11 @@ namespace TwoWaySynonymsApi.DataModel
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SynonymView>().ToView("SynonymsView");
+            modelBuilder.Entity<SynonymView>(op =>
+            {
+                op.HasNoKey();
+                op.ToView("SynonymsView");
+            });
             base.OnModelCreating(modelBuilder);
         }
 

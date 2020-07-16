@@ -42,8 +42,8 @@ namespace TwoWaySynonymsApi.Controllers
         {
             var result = await _synonymBusiness.CreateAsync(synonym);
             if ((result?.Id ?? 0) != 0)
-                return BadRequest();
-            return Created("", result.Id);
+                return Created("", result.Id);
+            return BadRequest();
         }
 
         [HttpPut]

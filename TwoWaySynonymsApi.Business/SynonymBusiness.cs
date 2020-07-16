@@ -24,13 +24,15 @@ namespace TwoWaySynonymsApi.Business
 
         public async Task<IEnumerable<SynonymDto>> GetAllAsync()
         {
-            var items = await _synonymViewRepository.GetAllAsync();
-            return _synonymViewMapper.ConvertToDtoCollection(items);
+            
+            return _synonymViewMapper.ConvertToDtoCollection(
+                await _synonymViewRepository.GetAllAsync());
         }
 
         public async Task<SynonymDto> GetByIdAsync(int id)
         {
-            return _synonymMapper.ConvertToDto(await _synonymRepository.GetByIdAsync(id));
+            return _synonymMapper.ConvertToDto(
+                await _synonymRepository.GetByIdAsync(id));
         }
 
         public async Task<SynonymDto> CreateAsync(SynonymDto synonym)
