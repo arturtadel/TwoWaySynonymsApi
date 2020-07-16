@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Threading.Tasks;
 using TwoWaySynonymsApi.Common.Exceptions;
 using TwoWaySynonymsApi.DataModel;
 using TwoWaySynonymsApi.DataModel.Domain.Meta;
@@ -10,28 +6,9 @@ using TwoWaySynonymsApi.Repository.Meta;
 
 namespace TwoWaySynonymsApi.Repository
 {
-    public abstract class BaseRepository<TKey, TModel> : IBaseRepository<TKey,TModel> 
+    public abstract class BaseRepository<TKey, TModel> : BaseReadonlyRepository<TKey,TModel>, IBaseRepository<TKey,TModel> 
         where TModel : BaseModel<TKey>
     {
-        protected DbContext DbContext { get; }
-        protected DbSet<TModel> DbSet { get; }
-
-        protected BaseRepository(ApplicationDbContext dbContext)
-        {
-            DbContext = dbContext;
-            DbSet = DbContext.Set<TModel>();
-        }
-
-        public virtual async Task<ICollection<TModel>> GetAllAsync()
-        {
-            return await DbSet.Where(x => !x.Deleted).ToListAsync();
-        }
-
-        public virtual async Task<TModel> GetByIdAsync(TKey id)
-        {
-            return await  DbSet.FindAsync(id);
-        }
-
         public virtual async Task<TModel> CreateAsync(TModel item)
         {
             DbSet.Add(item);
@@ -59,6 +36,10 @@ namespace TwoWaySynonymsApi.Repository
                 oldItem.Deleted = true;
                 await UpdateAsync(oldItem);
             }
+        }
+
+        protected BaseRepository(ApplicationDbContext dbContext) : base(dbContext)
+        {
         }
     }
 }

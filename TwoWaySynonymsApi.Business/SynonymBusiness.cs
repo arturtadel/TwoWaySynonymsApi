@@ -10,17 +10,22 @@ namespace TwoWaySynonymsApi.Business
     public class SynonymBusiness : ISynonymBusiness
     {
         private readonly ISynonymRepository _synonymRepository;
+        private readonly ISynonymViewRepository _synonymViewRepository;
         private readonly ISynonymMapper _synonymMapper;
-        public SynonymBusiness(ISynonymRepository synonymRepository, ISynonymMapper synonymMapper)
+        private readonly ISynonymViewMapper _synonymViewMapper;
+        public SynonymBusiness(ISynonymRepository synonymRepository, ISynonymMapper synonymMapper, ISynonymViewRepository synonymViewRepository, ISynonymViewMapper synonymViewMapper)
         {
             _synonymRepository = synonymRepository;
             _synonymMapper = synonymMapper;
+            _synonymViewRepository = synonymViewRepository;
+            _synonymViewMapper = synonymViewMapper;
         }
 
 
         public async Task<IEnumerable<SynonymDto>> GetAllAsync()
         {
-            return _synonymMapper.ConvertToDtoCollection(await _synonymRepository.GetAllAsync());
+            var items = await _synonymViewRepository.GetAllAsync();
+            return _synonymViewMapper.ConvertToDtoCollection(items);
         }
 
         public async Task<SynonymDto> GetByIdAsync(int id)

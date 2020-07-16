@@ -9,6 +9,15 @@ namespace TwoWaySynonymsApi.DataModel
         {
 
         }
-        //public DbSet<Synonym> Synonyms { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SynonymView>().ToView("SynonymsView");
+            base.OnModelCreating(modelBuilder);
+        }
+
+        public DbSet<Synonym> Synonyms { get; set; }
+
+        public DbSet<SynonymView> SynonymsView { get; set; }
     }
 }

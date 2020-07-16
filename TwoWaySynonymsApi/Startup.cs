@@ -37,7 +37,9 @@ namespace TwoWaySynonymsApi
             
             services.AddScoped<ISynonymBusiness, SynonymBusiness>();
             services.AddScoped<ISynonymRepository, SynonymRepository>();
+            services.AddScoped<ISynonymViewRepository, SynonymViewRepository>();
             services.AddSingleton<ISynonymMapper, SynonymMapper>();
+            services.AddSingleton<ISynonymViewMapper, SynonymViewMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
