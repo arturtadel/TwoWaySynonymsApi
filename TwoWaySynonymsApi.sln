@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi", "TwoWaySynonymsApi.csproj", "{266E8CB2-B4A3-47EF-9515-FE3A57F80CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi", "TwoWaySynonymsApi\TwoWaySynonymsApi.csproj", "{266E8CB2-B4A3-47EF-9515-FE3A57F80CBB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.DataModel", "..\TwoWaySynonymsApi.DataModel\TwoWaySynonymsApi.DataModel.csproj", "{873F9C00-4807-41E4-A0B5-26325FD6654D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.DataModel", "TwoWaySynonymsApi.DataModel\TwoWaySynonymsApi.DataModel.csproj", "{873F9C00-4807-41E4-A0B5-26325FD6654D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Business", "..\TwoWaySynonymsApi.Business\TwoWaySynonymsApi.Business.csproj", "{1BDD5406-C9F3-4375-B0FF-8968DB8EA100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Business", "TwoWaySynonymsApi.Business\TwoWaySynonymsApi.Business.csproj", "{1BDD5406-C9F3-4375-B0FF-8968DB8EA100}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Repository", "..\TwoWaySynonymsApi.Repository\TwoWaySynonymsApi.Repository.csproj", "{CC027BBF-6592-4BF4-B270-6FFA313F706D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Repository", "TwoWaySynonymsApi.Repository\TwoWaySynonymsApi.Repository.csproj", "{CC027BBF-6592-4BF4-B270-6FFA313F706D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Common", "..\TwoWaySynonymsApi.Common\TwoWaySynonymsApi.Common.csproj", "{505CC848-27BA-4EA9-A271-74EA15E3B6D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoWaySynonymsApi.Common", "TwoWaySynonymsApi.Common\TwoWaySynonymsApi.Common.csproj", "{505CC848-27BA-4EA9-A271-74EA15E3B6D0}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TwoWaySynonymsApi.Database", "..\TwoWaySynonymsApi.Database\TwoWaySynonymsApi.Database.sqlproj", "{A5D37870-3253-446F-AF84-54D834059296}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TwoWaySynonymsApi.Database", "TwoWaySynonymsApi.Database\TwoWaySynonymsApi.Database.sqlproj", "{A5D37870-3253-446F-AF84-54D834059296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
